@@ -1,0 +1,68 @@
+{% extends "core/base.html" %}
+{% block title %}Portfolio{% endblock %}
+{% block background %}{% load static %}{% static 'core/img/portfolio-bg.jpg'%}{% endblock %}
+{% block headers %}
+<h1>Portfolio</h1>
+<span class="subheading"></span>
+{% endblock %}
+{% block content %}
+
+
+<div class="container">
+    <div class="container">
+        <div class="row">
+            <h2 class="mx-auto text-center">Proyectos de Programación</h2>
+            <br>
+        </div>
+    </div>
+    {% for project in projects%}
+    <!-- Proyecto 
+    <div class="row project">  	
+        <div class="col-lg-3 col-md-4 offset-lg-1">
+            <img class="img-fluid" src="{% static 'core/img/biblioteca.jpg' %}" alt="">
+        </div>
+      <div class="col-lg-7 col-md-8">
+            <h2 class="section-heading title">Sistema de Gestión de Biblioteca</h2>   
+        <p>Un sistema de gestión de biblioteca permite a los usuarios buscar libros, consultar disponibilidad, realizar préstamos y devoluciones, y gestionar el catálogo de libros. Incluye una base de datos para almacenar información sobre libros, usuarios y transacciones. Puede tener una interfaz web o de escritorio para los usuarios y un panel de administración para el personal de la biblioteca.</p>
+        <p><a href="http://google.com">Más información</a></p>
+        </div>
+    </div>
+   
+     <div class="row project">  	
+        <div class="col-lg-3 col-md-4 offset-lg-1">
+            <img class="img-fluid" src="{% static 'core/img/e_comerce.jpg' %}" alt="">
+        </div>
+      <div class="col-lg-7 col-md-8">
+            <h2 class="section-heading title">Plataforma de Comercio Electrónico</h2>   
+        <p>Una plataforma de comercio electrónico es un sistema que permite a los usuarios comprar y vender productos en línea. Incluye funciones como la visualización de productos, la gestión de carritos de compras, procesamiento de pagos, gestión de pedidos y perfiles de usuario. Este tipo de proyecto puede ser complejo e incluir aspectos de seguridad, integración con pasarelas de pago y características avanzadas como recomendaciones de productos.</p>
+        <p><a href="http://google.com">Más información</a></p>
+        </div>
+    </div>
+  
+    <div class="row project">  	
+        <div class="col-lg-3 col-md-4 offset-lg-1">
+            <img class="img-fluid" src="{% static 'core/img/gestion.jpg' %}" alt="">
+        </div>
+      <div class="col-lg-7 col-md-8">
+            <h2 class="section-heading title">Sistema de Gestión de Proyectos</h2>   
+        <p> Un sistema de gestión de proyectos es una herramienta que facilita la planificación, ejecución y seguimiento de proyectos. Puede incluir funciones como la asignación de tareas, la colaboración en equipo, seguimiento de hitos, gestión de documentos y generación de informes. Este tipo de proyecto a menudo se implementa como una aplicación web que permite a los equipos coordinar sus esfuerzos y mantenerse al tanto del progreso del proyecto.</p>
+        <p><a href="http://google.com">Más información</a></p>
+        </div>
+    </div>
+    </div>-->
+    <div class="row project">  	
+        <div class="col-lg-3 col-md-4 offset-lg-1">
+            <img class="img-fluid" src="{{project.image.url}}" alt="">
+        </div>
+      <div class="col-lg-7 col-md-8">
+            <h2 class="section-heading title">{{project.title}}</h2>   
+        <p> {{project.description}}</p>
+        {% if project.url != null %}
+    <p><a href="{{project.url}}">Más información</a></p>
+        {% endif %}
+        </div>
+    </div>
+    {% endfor %}
+    </div>
+ 
+{% endblock %}

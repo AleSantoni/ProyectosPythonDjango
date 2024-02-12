@@ -1,0 +1,29 @@
+{% extends "core/base.html" %}
+{% load static %}
+{% block title%}{{page.title}}{% endblock %}
+{% block content %}
+<section class="page-section about-heading">
+    <div class="container">
+      <div class="about-heading-content mbtm">
+        <div class="row">
+          <div class="col-xl-9 col-lg-10 mx-auto">
+            <div class="bg-faded rounded p-5 forced">
+              <h2 class="section-heading mb-4">
+                <span class="section-heading-lower">{{page.title}}</span>
+              </h2>
+              <div class="section-content">
+                  <p>{{page.content|safe}}</p>
+                  {% if user.is_authenticated and user.is_superuser %}
+                  <p><a href="{% url 'admin:pages_page_change' page.id %}">Editar</a></p>
+                  <p><a href="{% url 'admin:pages_page_add' %}">Agregar Página</a></p>
+                  <p><a href="{% url 'admin:pages_page_delete' page.id %}">Eliminar Página</a></p>
+                {% endif %}
+                  
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  {% endblock %}

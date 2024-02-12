@@ -1,0 +1,18 @@
+{% extends "core/base.html" %}
+{% block title %}Acerca de Mi{% endblock %}
+{% block background %}{% load static %}{% static 'core/img/about-bg.jpg'%}{% endblock %}
+
+{% block headers %}
+<h1>Acerca de</h1>
+<span class="subheading">Biografia</span>
+{% endblock %}
+
+{% block content %}
+<div class="col-lg-3 col-md-4 offset-lg-1">
+    <img class="img-fluid avatar" src="{% static 'core/img/FotoPerfilAle.jpeg' %} " alt="">
+  </div>
+  <div class="col-lg-7 col-md-8">
+    <h2 class="section-heading">Santoni Alejandro</h2>   
+   <p> Es un programador junior con una sólida base en desarrollo de software. Casado y padre de tres hijos, demuestra ser una persona comprometida tanto en su vida personal como profesional. Además de su dedicación a la programación, demuestra habilidades en el ámbito deportivo, especialmente en el baloncesto. Su disposición para pasear sugiere un interés en actividades al aire libre y el cuidado de su bienestar. Alejandro se destaca por ser una persona atenta, organizada y proactiva, cualidades que seguramente contribuyen a su éxito tanto en su vida cotidiana como en su carrera como programador.</p>
+  </div>
+{% endblock %}
